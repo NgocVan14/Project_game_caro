@@ -73,7 +73,7 @@
             // pctbAvatar
             // 
             this.pctbAvatar.BackColor = System.Drawing.SystemColors.Control;
-            this.pctbAvatar.BackgroundImage = global::GameCaro.Properties.Resources.caro;
+            this.pctbAvatar.BackgroundImage = global::GameCaro.Properties.Resources.avatar;
             this.pctbAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pctbAvatar.Location = new System.Drawing.Point(3, 3);
             this.pctbAvatar.Name = "pctbAvatar";

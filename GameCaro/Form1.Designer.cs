@@ -28,17 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pnlChessBoard = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pctbAvatar = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnLang = new System.Windows.Forms.Button();
+            this.btnLAN = new System.Windows.Forms.Button();
+            this.txbIP = new System.Windows.Forms.TextBox();
             this.pctbMark = new System.Windows.Forms.PictureBox();
             this.prcbCoolDown = new System.Windows.Forms.ProgressBar();
-            this.txbIP = new System.Windows.Forms.TextBox();
             this.txbPlayerName = new System.Windows.Forms.TextBox();
+            this.tmCoolDown = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbAvatar)).BeginInit();
             this.panel3.SuspendLayout();
@@ -47,107 +49,115 @@
             // 
             // pnlChessBoard
             // 
+            this.pnlChessBoard.BackColor = System.Drawing.SystemColors.Control;
             this.pnlChessBoard.Location = new System.Drawing.Point(12, 12);
             this.pnlChessBoard.Name = "pnlChessBoard";
-            this.pnlChessBoard.Size = new System.Drawing.Size(691, 622);
+            this.pnlChessBoard.Size = new System.Drawing.Size(594, 520);
             this.pnlChessBoard.TabIndex = 0;
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.pctbAvatar);
-            this.panel2.Location = new System.Drawing.Point(719, 12);
+            this.panel2.Location = new System.Drawing.Point(612, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(336, 314);
+            this.panel2.Size = new System.Drawing.Size(269, 269);
             this.panel2.TabIndex = 1;
             // 
             // pctbAvatar
             // 
-            this.pctbAvatar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pctbAvatar.BackgroundImage = global::GameCaro.Properties.Resources.avatar;
+            this.pctbAvatar.BackColor = System.Drawing.SystemColors.Control;
+            this.pctbAvatar.BackgroundImage = global::GameCaro.Properties.Resources.caro;
             this.pctbAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pctbAvatar.Location = new System.Drawing.Point(0, 1);
+            this.pctbAvatar.Location = new System.Drawing.Point(3, 3);
             this.pctbAvatar.Name = "pctbAvatar";
-            this.pctbAvatar.Size = new System.Drawing.Size(335, 312);
+            this.pctbAvatar.Size = new System.Drawing.Size(263, 263);
+            this.pctbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctbAvatar.TabIndex = 0;
             this.pctbAvatar.TabStop = false;
             // 
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.SystemColors.Control;
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.btnLang);
+            this.panel3.Controls.Add(this.btnLAN);
+            this.panel3.Controls.Add(this.txbIP);
             this.panel3.Controls.Add(this.pctbMark);
             this.panel3.Controls.Add(this.prcbCoolDown);
-            this.panel3.Controls.Add(this.txbIP);
             this.panel3.Controls.Add(this.txbPlayerName);
-            this.panel3.Location = new System.Drawing.Point(719, 339);
+            this.panel3.Location = new System.Drawing.Point(612, 287);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(335, 294);
+            this.panel3.Size = new System.Drawing.Size(269, 214);
             this.panel3.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(37, 192);
+            this.label1.Font = new System.Drawing.Font("Elephant", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 150);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(249, 38);
+            this.label1.Size = new System.Drawing.Size(254, 35);
             this.label1.TabIndex = 5;
             this.label1.Text = "5 in a line to win";
             // 
-            // btnLang
+            // btnLAN
             // 
-            this.btnLang.Location = new System.Drawing.Point(0, 126);
-            this.btnLang.Name = "btnLang";
-            this.btnLang.Size = new System.Drawing.Size(175, 26);
-            this.btnLang.TabIndex = 4;
-            this.btnLang.Text = "LAN";
-            this.btnLang.UseVisualStyleBackColor = true;
+            this.btnLAN.Location = new System.Drawing.Point(3, 84);
+            this.btnLAN.Name = "btnLAN";
+            this.btnLAN.Size = new System.Drawing.Size(140, 23);
+            this.btnLAN.TabIndex = 4;
+            this.btnLAN.Text = "LAN";
+            this.btnLAN.UseVisualStyleBackColor = true;
+            // 
+            // txbIP
+            // 
+            this.txbIP.Location = new System.Drawing.Point(3, 58);
+            this.txbIP.Name = "txbIP";
+            this.txbIP.Size = new System.Drawing.Size(140, 20);
+            this.txbIP.TabIndex = 3;
+            this.txbIP.Text = "127.0.0.1";
             // 
             // pctbMark
             // 
             this.pctbMark.BackColor = System.Drawing.SystemColors.Control;
-            this.pctbMark.Location = new System.Drawing.Point(192, 12);
+            this.pctbMark.Location = new System.Drawing.Point(149, 3);
             this.pctbMark.Name = "pctbMark";
-            this.pctbMark.Size = new System.Drawing.Size(143, 140);
+            this.pctbMark.Size = new System.Drawing.Size(117, 104);
             this.pctbMark.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctbMark.TabIndex = 3;
+            this.pctbMark.TabIndex = 2;
             this.pctbMark.TabStop = false;
             // 
             // prcbCoolDown
             // 
-            this.prcbCoolDown.Location = new System.Drawing.Point(0, 48);
+            this.prcbCoolDown.Location = new System.Drawing.Point(3, 29);
             this.prcbCoolDown.Name = "prcbCoolDown";
-            this.prcbCoolDown.Size = new System.Drawing.Size(175, 25);
-            this.prcbCoolDown.TabIndex = 2;
-            // 
-            // txbIP
-            // 
-            this.txbIP.Location = new System.Drawing.Point(0, 88);
-            this.txbIP.Name = "txbIP";
-            this.txbIP.Size = new System.Drawing.Size(175, 22);
-            this.txbIP.TabIndex = 1;
-            this.txbIP.Text = "127.0.0.1";
+            this.prcbCoolDown.Size = new System.Drawing.Size(140, 23);
+            this.prcbCoolDown.TabIndex = 1;
             // 
             // txbPlayerName
             // 
-            this.txbPlayerName.Location = new System.Drawing.Point(0, 14);
+            this.txbPlayerName.Location = new System.Drawing.Point(3, 3);
             this.txbPlayerName.Name = "txbPlayerName";
             this.txbPlayerName.ReadOnly = true;
-            this.txbPlayerName.Size = new System.Drawing.Size(175, 22);
+            this.txbPlayerName.Size = new System.Drawing.Size(140, 20);
             this.txbPlayerName.TabIndex = 0;
+            // 
+            // tmCoolDown
+            // 
+            this.tmCoolDown.Tick += new System.EventHandler(this.tmCoolDown_Tick);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 666);
+            this.ClientSize = new System.Drawing.Size(893, 549);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlChessBoard);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Game Cờ Caro";
+            this.Text = "Game Caro LAN";
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pctbAvatar)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -161,14 +171,15 @@
 
         private System.Windows.Forms.Panel pnlChessBoard;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pctbAvatar;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnLang;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnLAN;
+        private System.Windows.Forms.TextBox txbIP;
         private System.Windows.Forms.PictureBox pctbMark;
         private System.Windows.Forms.ProgressBar prcbCoolDown;
-        private System.Windows.Forms.TextBox txbIP;
         private System.Windows.Forms.TextBox txbPlayerName;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer tmCoolDown;
     }
 }
 
